@@ -6,9 +6,11 @@ namespace AvatarAPITests
     public class AvatarUrlTests
     {
         IAvatarService _avatarService;
+        IImageContext _imageContext;
         public AvatarUrlTests()
         {
-            _avatarService = new AvatarService();
+            _imageContext = new ImageContext(".\\Db\\data.db");
+            _avatarService = new AvatarService(_imageContext);
         }
 
         [Fact]
@@ -27,13 +29,16 @@ namespace AvatarAPITests
         [Fact]
         public void UserEndingOneToFive_ReturnsDatabaseUrl()
         {
+            var urlQuery = from c in _imageContext.Images
+                           select c;
+
             for (int i = 1; i <= 5; i++)
             {
                 var testUser = $"testuser{i}";
 
                 var url = _avatarService.GetAvatarUrl(testUser);
 
-                Assert.False(String.IsNullOrEmpty(url));
+                Assert.Contains(urlQuery, c => c.Url == url);
             }
         }
 

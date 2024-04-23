@@ -4,6 +4,12 @@ namespace AvatarAPI.Services
 {
     public class AvatarService : IAvatarService
     {
+        IImageContext _imageContext;
+        public AvatarService(IImageContext imageContext)
+        {
+            _imageContext = imageContext;
+        }
+
         public string GetAvatarUrl(string userIdentifier)
         {
             var avatarUrl = String.Empty;
@@ -38,9 +44,17 @@ namespace AvatarAPI.Services
 
             return url;
         }
-        private string GetSqliteAvatarUrl(string userIdentifier)
+        private string? GetSqliteAvatarUrl(string userIdentifier)
         {
-            throw new NotImplementedException();
+            var lastDigit = int.Parse(userIdentifier.Last().ToString());
+
+            var urlQuery = from c in _imageContext.Images
+                           where c.Id == lastDigit
+                           select c.Url;
+
+            var url = urlQuery.FirstOrDefault();
+
+            return url;
         }
         private string GetDicebearVowelAvatarUrl(string userIdentifier)
         {

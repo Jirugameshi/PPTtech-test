@@ -1,4 +1,5 @@
 ﻿using AvatarAPI.Services;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 
 namespace AvatarAPI.Controllers
@@ -18,7 +19,7 @@ namespace AvatarAPI.Controllers
         {
             var url = _avatarService.GetAvatarUrl(userIdentifier);
 
-            return Ok(url);
+            return Json(new { url });
         }
     }
 }

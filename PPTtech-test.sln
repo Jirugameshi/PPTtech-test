@@ -7,6 +7,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AvatarAPI", "AvatarAPI\Avat
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AvatarAPITests", "AvatarAPITests\AvatarAPITests.csproj", "{FBE8341E-A792-4687-8349-52C735749A1F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SampleUI", "SampleUI\SampleUI.csproj", "{7FBF0498-EAF8-483F-B5A2-D9419BDF0274}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{FBE8341E-A792-4687-8349-52C735749A1F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FBE8341E-A792-4687-8349-52C735749A1F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FBE8341E-A792-4687-8349-52C735749A1F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7FBF0498-EAF8-483F-B5A2-D9419BDF0274}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7FBF0498-EAF8-483F-B5A2-D9419BDF0274}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7FBF0498-EAF8-483F-B5A2-D9419BDF0274}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7FBF0498-EAF8-483F-B5A2-D9419BDF0274}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
